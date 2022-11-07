@@ -47,7 +47,7 @@ def DownloadSong(link, path=pathToDownloadsFolder):
 # Playlist download function
 def DownloadPlaylist(link, path=pathToDownloadsFolder):
     # Setting up a counter variable to track how many songs have been successfully downloaded
-    counter = 1
+    counter = 0
 
     # Setting up the path
     downloadPath = pathToDownloadsFolder
@@ -65,7 +65,7 @@ def DownloadPlaylist(link, path=pathToDownloadsFolder):
 
             if(not "video not available" in title.lower()):
                 try:
-                    print("Download number {}: Starting downloading song: {}...".format(counter, title))
+                    print("Download number {}: Starting downloading song: {}...".format(counter + 1, title))
                     song.streams.first().download(downloadPath, fileName)
                     print("Audio has been succesfully downloaded! Name of the file: {}".format(fileName))
                     counter += 1
