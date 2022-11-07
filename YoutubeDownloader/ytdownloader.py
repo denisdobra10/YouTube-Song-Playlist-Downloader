@@ -34,14 +34,17 @@ def DownloadSong(link, path=pathToDownloadsFolder):
         song = YouTube(link)
         fileName = song.title + ".mp3"
 
+        # Avoid name errors
+        if('"' in fileName):
+            fileName = fileName.replace('"', "-")
+
         print("Starting downloading song: {}...".format(song.title))
         song.streams.first().download(downloadPath, fileName)
         print("Audio has been succesfully downloaded! Name of the file: {}; Location on disk: {}".format(fileName, downloadPath))
-
-        return True
-    except:
+    except Exception as e:
+        print(e.args)
         print("An error occured! Audio file was not downloaded. There could've been an url misspelling!")
-        return False
+    
     
 
 # Playlist download function
@@ -62,6 +65,10 @@ def DownloadPlaylist(link, path=pathToDownloadsFolder):
         for song in playlist.videos:
             title = song.streams.first().title
             fileName = title + ".mp3"
+
+            # Avoid name errors
+            if('"' in fileName):
+                fileName = fileName.replace('"', "-")
 
             if(not "video not available" in title.lower()):
                 try:
