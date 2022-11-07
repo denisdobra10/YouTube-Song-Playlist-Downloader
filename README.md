@@ -1,12 +1,11 @@
-# YouTube-Song-Playlist-Downloader
-
-Denis Dobra @ 2022
-
 # YOU CAN DOWNLOAD PLAYLISTS TOO!
 
 This script was written in November 2022
 Script is not going to work properly if YouTube will change its algorithm and script is not up to date!
 
+Denis Dobra @ 2022
+
+# YouTube-Song-Playlist-Downloader
 
 
 * YouTube Downloader is one of my favorite tools! You can get rid of the idea of downloading your favourite songs using
