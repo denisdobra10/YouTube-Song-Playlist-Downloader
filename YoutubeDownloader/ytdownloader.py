@@ -1,6 +1,21 @@
-# YouTube music downloader by Denis @ 2022
-from pytube import YouTube, Playlist
+# Auto install dependencies ######################################
 import os
+import sys
+import subprocess
+
+try:
+    from pytube import YouTube, Playlist
+except:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pytube'])
+    from pytube import YouTube, Playlist
+
+os.system('cls' if os.name == 'nt' else 'clear')
+##################################################################
+
+
+# YouTube music downloader by Denis @ 2022
+
+
 
 pathToScript = os.path.dirname(__file__)
 pathToDownloadsFolder = pathToScript + "\Downloads"
